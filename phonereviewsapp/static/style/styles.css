@@ -1,0 +1,485 @@
+/* BASE */
+#menu_bar
+{
+    text-align: left;
+    font-size: 20px;
+    background: #000;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    float: top;
+
+}
+#header_buttons{
+    float: left;
+    margin: 10px;
+    padding: 15px;
+}
+
+#header_user{
+    float: right;
+    margin: 10px;
+    padding: 15px;
+
+}
+
+#header_user_font{
+    text-align: right;
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+
+}
+
+#header_home{
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 10px;
+    border: solid goldenrod 2px;
+    font-family: "Fira Code";
+
+}
+
+#header_button{
+
+    color: darkgoldenrod;
+    padding: 10px;
+    margin: 10px;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#header_button:hover{
+
+    background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+}
+#header_button:active{
+    background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+}
+
+#body {
+    background: #343134;
+    padding: 0;
+    margin: 0;
+}
+
+/* PHONE LIST */
+#phone_list_box
+{
+    text-align: center;
+    border: solid darkgoldenrod 2px;
+    border-radius: 4px;
+    background: black;
+    margin: 5% 10%;
+    width: 80%;
+    padding: 5% 0 10% 0;
+}
+#phone_records{
+
+    text-align: center;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    padding: 0 10%;
+    margin: 5% 0;
+
+
+}
+
+#list_href{
+        text-decoration: none;
+        color:black;
+
+}
+
+#phone_record{
+    text-align: center;
+    width: 50%;
+    height: 1%;
+    border: solid transparent 1px;
+    border-radius: 4px;
+    background-color: #3d4052;
+    color: black;
+    margin: 1% 25%;
+    text-decoration: none;
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+    font-size: 30px;
+    text-decoration: none;
+
+}
+#phone_record:hover{
+    background-color: #453d52;
+    border: solid gray 1px;
+    border-radius: 4px;
+}
+
+#record_text{
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#phone_list_title{
+    text-align: center;
+    font-family: "Fira Code";
+    color: darkgoldenrod;
+}
+#list_add_button_container{
+        margin: 10% 0 0 0 ;
+}
+
+#list_add_button{
+
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 10px;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: "Fira Code";
+    font-size: 20px;
+    background-color: #444240;
+}
+#list_add_button:hover{
+    background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+
+}
+#list_add_button:active{
+    background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+}
+
+/* LOGIN FORM */
+
+#login_form{
+
+    margin: 5% 25%;
+    width: 50%;
+    height: 60%;
+    padding: 2% 0 1% 0;
+    text-align: center;
+    background-color: black;
+    border: solid darkgoldenrod 2px;
+    border-radius: 4px;
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+
+}
+
+#login_input{
+
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+}
+
+/* PHONE DETAIL */
+
+#phone_detail{
+
+    margin: 5% 25%;
+    width: 50%;
+    height: 60%;
+    padding: 0 0 1% 0;
+    text-align: center;
+    background-color: black;
+    border: solid darkgoldenrod 2px;
+    border-radius: 4px;
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+
+}
+
+#phone_detail_message {
+    width: 95%;
+    alignment: center;
+    text-align: center;
+    margin: 0 1%;
+}
+#phone_detail_edit_button{
+
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 5px;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: "Fira Code";
+    font-size: 20px;
+    background-color: #444240;
+}
+#phone_detail_edit_button:hover{
+    background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+
+}
+#phone_detail_edit_button:active{
+    background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+}
+
+#stores{
+
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    color:black;
+
+}
+
+#store{
+    background-color: #605573;
+    text-align: center;
+    margin: 2px 5%;
+    width: 80%;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 1px;
+    text-decoration: none;
+    color:black;
+
+}
+
+#store_details{
+    background-color: black;
+    text-align: center;
+    margin: 2px 5%;
+    width: 80%;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 1px;
+    text-decoration: none;
+    color:darkgoldenrod;
+    border: solid 2px darkgoldenrod;
+    padding: 5px;
+
+}
+
+#store_details:hover{
+
+        background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+
+}
+
+#store_details:active{
+        background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+}
+
+#reviews{
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    color:black;
+
+}
+
+#review{
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 2px 5%;
+    width: 80%;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 1px;
+
+}
+
+/* store detail */
+
+#store_detail{
+
+    margin: 5% 25%;
+    width: 50%;
+    height: 60%;
+    text-align: center;
+    background-color: black;
+    border: solid darkgoldenrod 2px;
+    border-radius: 4px;
+    color: darkgoldenrod;
+    font-family: "Fira Code";
+    padding: 1%;
+}
+
+#store_detail_edit_button{
+
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 10px;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: "Fira Code";
+    font-size: 20px;
+    background-color: #444240;
+    margin: 10px 10px;
+
+}
+#store_detail_edit_button:hover{
+    background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+
+}
+#store_detail_edit_button:active{
+    background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+}
+
+#store_detail_edit_button_container{
+        margin: 10% 0 1% 0 ;
+}
+
+#url_addr{
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+#url_addr:hover{
+    color: #b35e66;
+    text-decoration: none;
+
+}
+/*  FORM */
+#form_table
+ {
+    height: 60%;
+    width: 60%;
+    border-radius: 4px;
+    text-align: center;
+    background-color: black;
+    color: darkgoldenrod !important;
+    font-family: "Fira Code" !important;
+
+
+}
+
+#form_table_login
+ {
+    height: 60%;
+    width: 60%;
+    border-radius: 4px;
+    text-align: center;
+    background-color: black;
+    color: darkgoldenrod !important;
+    font-family: "Fira Code" !important;
+    margin: 0 20% ;
+}
+
+#form_box
+{
+
+
+    width: 40%;
+    border: solid darkgoldenrod 2px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5% 25%;
+    background-color: black;
+    color: darkgoldenrod !important;
+    padding: 2% 5% 5% 5%;
+    font-family: "Fira Code" !important;
+
+}
+
+input[type=password]{
+    height: 30px;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    width: 50%;
+    padding: 0;
+    font-family: "Fira Code";
+    font-size: 20px;
+    margin: 1% 1%;
+
+}
+
+#id_username, #id_password{
+
+     height: 30px;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    width: 50%;
+    padding: 0;
+    font-family: "Fira Code";
+    font-size: 20px;
+    margin: 1% 1%;
+
+}
+
+
+textarea, input[type=number], input[type=url]
+{
+    height: 30px;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0;
+    font-family: "Fira Code";
+    font-size: 20px;
+    margin: 1% 1%;
+}
+
+input[type=file]
+{
+    font-size: 20px;
+    font-family: "Fira Code";
+
+}
+
+label{
+    color:darkgoldenrod;
+    font-size: 20px;
+}
+
+#delete_button_container{
+    text-align: left;
+}
+
+#delete_button{
+
+
+    text-align: left;
+    color: darkgoldenrod;
+    padding: 10px;
+    margin: 0 0 3% 0;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: "Fira Code";
+    font-size: 20px;
+    background-color: #444240;
+}
+
+
+input[type=submit]{
+
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 10px;
+    margin: 7% 0 3% 0;
+    border: solid darkgoldenrod 2px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: "Fira Code";
+    font-size: 20px;
+    background-color: #444240;
+
+}
+
+input:hover[type=submit] {
+    background: linear-gradient(to bottom right, #5c2c30, #b35e66);
+}
+
+
+
+input:active[type=submit]{
+    background: linear-gradient(to bottom right, #b35e66, #5c2c30);
+
+
+}
+
+#img{
+    width:200px;
+
+}

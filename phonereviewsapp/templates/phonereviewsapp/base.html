@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static "/style/styles.css" %}" />
+<title>{% block title %}PhoneReviews by Mateusz{% endblock %}</title>
+</head>
+
+<body id ="body">
+
+<div id="menu_bar">
+  {% block header %}
+
+      <div id="header_buttons">
+      <a id="header_button" href="/phonereviews">Home</a>
+      </div>
+
+      <div id="header_user">
+      {% if user.username %}
+          <a id="header_user_font">User: {{ user.username }}</a>
+              <a id="header_button" href="{% url 'logout' %}">logout</a>
+
+      {% else %}
+          <a id="header_button" href="/accounts/login/">Log in</a>
+          <a id="header_button" href="/signup/">Sign up</a>
+
+      {% endif %}
+      </div>
+
+  {% endblock %}
+</div>
+
+<div id="content">
+  {% block content %}
+  {% if error_message %}<p><strong>{{ error_message}}</strong></p>{% endif %}
+  {% endblock %}
+</div>
+
+<div id="footer">
+  {% block footer %}{% endblock %}
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{% extends "phonereviewsapp/base.html" %}
+
+{% block content %}
+
+    <div id = "phone_list_box">
+        <h1 id = "phone_list_title"> Reviewed Phones:</h1>
+
+        <ul id="phone_records">
+            {% for phone in phone_list %}
+                <a id="list_href" href="{% url 'phonereviewsapp:phone_detail' phone.id %}">
+                <li  >
+                     <h6 id="phone_record"> {{ phone.name }}  {{ phone.model}}  {{ phone.number }} </h6>
+                </li>
+                </a>
+                {% empty %}<li>I am so sorry, no phones has been registered yet :( .</li>
+            {% endfor %}
+        </ul>
+
+        <div id="list_add_button_container">
+            {% if user.username %}<a id="list_add_button" href="{% url 'phonereviewsapp:phone_create' %}">Add new phone!</a>{% endif %}
+        </div>
+    </div>
+
+{% endblock %}

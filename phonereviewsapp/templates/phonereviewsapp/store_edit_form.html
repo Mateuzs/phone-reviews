@@ -1,0 +1,42 @@
+</html>{% extends "phonereviewsapp/base.html" %}
+
+{% block header %}
+    <div id="header_buttons">
+        <a id="header_button" href="/phonereviews/">Home</a>
+        <a id="header_button" href="{% url 'phonereviewsapp:store_detail' store.phone.id store.id %}">Back</a>
+    </div>
+    <div id="header_user">
+      {% if user.username %}
+          <a id="header_user_font">User: {{ user.username }}</a>
+          <a id="header_button" href="{% url 'logout' %}">logout</a>
+      {% else %}
+          <a id="header_button" href="/accounts/login/">Log in</a>
+          <a id="header_button" href="/signup/">Sign up</a>
+      {% endif %}
+      </div>
+{% endblock %}
+
+{% block content %}
+
+
+    <div id="form_box">
+
+
+        <form action="{% url 'phonereviewsapp:delete_store' store.id %}" method="post">
+            {% csrf_token %}
+            <div id="delete_button_container">
+         <input id="delete_button" type="submit" value="Delete Store">
+         </div>
+        </form>
+
+        <form  method="post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+
+            <table  id="form_table">
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Update"/>
+        </form>
+    </div>
+
+{% endblock %}

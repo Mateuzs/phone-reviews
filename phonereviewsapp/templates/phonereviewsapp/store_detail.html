@@ -1,0 +1,58 @@
+{% extends "phonereviewsapp/base.html" %}
+
+{% block header %}
+    <div id="header_buttons">
+        <a id="header_button" href="/phonereviews/">Home</a>
+        <a id="header_button" href="{% url 'phonereviewsapp:phone_detail' store.phone.id %}">Back</a>
+    </div>
+   <div id="header_user">
+      {% if user.username %}
+          <a id="header_user_font">User: {{ user.username }}</a>
+          <a id="header_button" href="{% url 'logout' %}">logout</a>
+
+      {% else %}
+          <a id="header_button" href="/accounts/login/">Log in</a>
+          <a id="header_button" href="/signup/">Sign up</a>
+
+      {% endif %}
+      </div>
+{% endblock %}
+
+{% block content %}
+
+    <div id="store_detail">
+
+        <h1>
+            {{ store.name }}
+            {% if user == store.user %}
+            {% endif %}
+        </h1>
+
+
+        {% if store.image %}
+            <p><img id="img" src="{{ store.image.url }}"/></p>
+        {% endif %}
+
+        <h2 >Address:</h2>
+
+        <p>
+            ul. {{ store.street }}, {{ store.number }} <br/>
+            {{ store.zipcode }} {{ store.city }} <br/>
+            {{ store.stateOrProvince }} ({{ store.country }}) <br/>
+        </p>
+
+         <h2>
+             <a id="url_addr" href="{{ store.url }}">Click to see online store!</a>
+         </h2>
+
+        {% if user == store.user %}
+            <div id="store_detail_edit_button_container">
+                <a id="store_detail_edit_button" href="{% url 'phonereviewsapp:store_edit' store.phone.id store.id %}?next={% url 'phonereviewsapp:store_detail' store.phone.id store.id %}">edit information</a>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+
+

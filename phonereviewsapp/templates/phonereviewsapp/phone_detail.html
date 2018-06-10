@@ -1,0 +1,119 @@
+{% extends "phonereviewsapp/base.html" %}
+
+{% block header %}
+
+      <div id="header_buttons">
+          <a id="header_button" href="/phonereviews">Home</a>
+          <a id="header_button" href="/phonereviews">Back</a>
+
+      </div>
+      <div id="header_user">
+        {% if user.username %}
+            <a id="header_user_font">User: {{ user.username }}</a>
+            <a id="header_button" href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a id="header_button" href="/accounts/login/">Log in</a>
+             <a id="header_button" href="/signup/">Sign up</a>
+        {% endif %}
+      </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="phone_detail">
+    <h1>
+        {{ phone.name }}
+    </h1>
+
+    {% if phone.image %}
+        <p><img id="img" src="{{ phone.image.url }}"/></p>
+    {% endif %}
+
+    <p>
+    <h3>
+        Model: {{ phone.phone_model }}<br/>
+        Number:  {{ phone.number }}<br/>
+        Screen:  {{ phone.screen }}<br/>
+        Processor: {{ phone.processor }}<br/>
+        RAM:  {{ phone.RAM }}<br/>
+        Memory: {{ phone.memory }} <br/>
+    </h3>
+    </p>
+
+
+    <p>
+    {% if user == phone.user %}
+        <a id="phone_detail_edit_button" href="{% url 'phonereviewsapp:phone_edit' phone.id %}?next={% url 'phonereviewsapp:phone_detail' phone.id %}">edit information</a>
+    {% endif %}
+    </p>
+
+
+    <h2>Available in stores:</h2>
+
+    <ul id="stores">
+     {% for store in phone.stores.all %}
+
+         <li id="store"> <h2> {{ store.name }}  :  {{ store.price }}PLN
+             <a id="store_details" href="{% url 'phonereviewsapp:store_detail' phone.id store.id %}"> Details</a></h2>
+         </li>
+        {% empty %}<li>Sorry, there is no stores at this time.</li>
+     {% endfor %}
+    </ul>
+
+    {% if user == phone.user %}
+         <p><a id="phone_detail_edit_button" href="{% url 'phonereviewsapp:store_create' phone.id %}?next={% url 'phonereviewsapp:phone_detail' phone.id %}">Add Store</a></p>
+    {% endif %}
+
+    <h2>Reviews:</h2>
+
+    <ul id="reviews">
+        {% for review in phone.phonereview_set.all %}
+            <li id ="review">
+
+                <h3>! {{ review.rating }} star{{ review.rating|pluralize }} !</h3>
+                <p>{{ review.comment }}</p>
+                <p>Created by {{ review.user }} on {{ review.date }}</p>
+
+                {% if user == review.user %}
+                    <form action="{% url 'phonereviewsapp:review_delete' review.id %}" method="post">
+                        {% csrf_token %}
+                        <div id="delete_button_container">
+                            <input id="delete_button" type="submit" value="Delete">
+                         </div>
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if user.username %}
+        <h3>Add Review:</h3>
+
+        <form action="{% url 'phonereviewsapp:review_create' phone.id %}" method="post">
+            {% csrf_token %}
+
+            <h3>Rating:</h3>
+            <p>
+                {% for rate in RATING_CHOICES %}
+                    <input type="radio" name="rating" id="rating{{ forloop.counter }}" value="{{ rate.0 }}" />
+                    <label for="choice{{ forloop.counter }}">{{ rate.1 }} star{{rate.0|pluralize }}</label>
+                    <br/>
+                {% endfor %}
+            </p>
+            <div id="phone_detail_message">
+                Message: <textarea name="comment" id="comment" rows="4"></textarea>
+            </div>
+            <input type="submit" value="Review" />
+
+        </form>
+
+    {% endif %}
+    </div>
+
+{% endblock %}
+
+
+
+
+
